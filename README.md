@@ -1,3 +1,3 @@
 # CHAYA
 
-Learning image manipulation and computer vision using numpy, scipy and pandas. 
+Learning image manipulation, edge detection and computer vision using numpy and scipy.

@@ -1,12 +1,13 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3.3
 # -*- coding: utf-8 -*-
-##*************************************************************************
-## COPYRIGHT © 2011-Now. VidAyer <svaksha|AT|gmail*com> All Rights Reserved.
-## LICENSE
-# AGPLv3 LICENSE <http://www.gnu.org/licenses/agpl.html>
-# See LICENSE.md file. The above Copyright notice and this permission notice
-# must be included in all copies or substantial portions of the Software.
-##*************************************************************************
+###########################################################################
+"""
+# Created on Fri Nov 16 12:25:35 2012
+# COPYRIGHT©2012. SVAKSHA <https://github.com/svaksha> AllRightsReserved.
+# LICENSE: AGPLv3 LICENSE <http://www.gnu.org/licenses/agpl.html>
+# Must include the Copyright notice and this permission notice in all copies.
+"""
+###########################################################################
 
 import numpy
 import numpy as np

@@ -2,10 +2,10 @@
 # -*- coding: utf-8 -*-
 ###########################################################################
 """
-# Created on Fri Nov 16 12:25:35 2012
-# COPYRIGHT©2012. SVAKSHA <https://github.com/svaksha> AllRightsReserved.
+# Created on Mon Nov 19 10:15:32 2012
+# COPYRIGHT © 2012. SVAKSHA, <https://github.com/svaksha>, AllRightsReserved.
 # LICENSE: AGPLv3 LICENSE <http://www.gnu.org/licenses/agpl.html>
-# Must include the Copyright notice and this permission notice in all copies.
+# All copies must retain this Copyright notice and this permission notice.
 """
 ###########################################################################
 
@@ -13,45 +13,53 @@ import numpy
 import numpy as np
 from numpy import array, newaxis
 import Image
-import glob, os.path, sys # system level stuff
+import glob, sys
+import os, os.path
 import shutil as sh
+
 
 im = Image.open("/home/m/Envs/jn/chaya/img-3D/PA200001.JPG").convert('L')
 im.show()
-print im.size # 2560 x 1920 pixels
+print (im.size)        # 2560 x 1920 pixels
 
 # converting the greyscale image into a floating type
 # shades of gray are coded as unsigned one-byte integer values with 0
 # corresponding to black and 255 corresponding to white.
 bmap = np.array(im, dtype=float)
-bmfloat = bmap / 256 # converts my image to floating types bet 0 to 1
-print bmfloat
+bmfloat = bmap/256        # convert image to floating types bet 0 to 1
+print (bmfloat)
 
 def diffRow():
-    newRow = np.array(bmfloat[:-1, :-1]) #last elem, lastElem
+    newRow = np.array(bmfloat[:-1, :-1])    #last elem, lastElem
     for row in range(len(newRow)):
         for col in range(len(newRow)):
             newRow[row][col] = bmfloat[row][col] - bmfloat[row+1][col]
             continue
-    print "printing newRow"
-    print newRow
-diffRow() #post computation output of a (n-1) X (n-1) matrix for each ROW
-print np.shape(diffRow)
+    print ("printing newRow")
+    print (newRow)
+# post computation output of a (n-1) X (n-1) matrix for each ROW
+diffRow()
+print (np.shape(diffRow))
 
 def diffCol():
+    for row in range(len(a)):
+        for column in range(len(a[0])): #start from 0-th position
+            answer[row][column]=a[row][column]-a[row][column+1 ]
+
     newCol = np.array(bmfloat[:-1, :-1]) #last elem, lastElem
     for row in range(len(newCol)):
         for col in range(len(newCol)):
             newCol[row][col] = bmfloat[row][col] - bmfloat[row][col+1]
             continue
-    print "printing newCol"
-    print newCol
+    print ("printing newCol")
+    print (newCol)
 diffCol() #post computation output of a (n-1) X (n-1) matrix for each COLUMN
-print np.shape(diffRow[:,newaxis] + diffCol)
+print (np.shape(diffRow[:,newaxis] + diffCol))
+
 
 def gridRowCol(diffCol, diffRow):
     """
-    For a two-connected matrix, I am adding the values if the two new arrays,
+    For a two-connected matrix, I'm adding the values of the two new arrays,
     diffRow and diffCol to get a new grid, which will be the edge detected Picture.
     """
     print "111"
@@ -65,5 +73,5 @@ def gridRowCol(diffCol, diffRow):
             # making it a two-dimensional 4x1 array.
             gridRC = diffRow[:,newaxis] + diffCol[:,newaxis]
             continue
-        print "gridRC", gridRC
+        print ("gridRC", gridRC)
 gridRowCol(diffCol, diffRow)

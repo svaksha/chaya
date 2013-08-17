@@ -66,7 +66,7 @@ def gridRowCol(diffCol, diffRow):
     #gridRC = np.concatenate([diffRow(), diffCol()])
     #gridRC = np.add(diffCol(), diffRow())
     #return gridRC
-    for row in newRow(): #return the num.of.items of a sequence.
+    for row in newRow():     #return the number of items in a sequence.
         #newRow = np.array(bmfloat[:-1, :-1])
         for col in diffRow(): #
             # newaxis index operator inserts a new axis into a,

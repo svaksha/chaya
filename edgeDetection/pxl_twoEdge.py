@@ -16,6 +16,8 @@ import Image
 import glob, sys
 import os, os.path
 import shutil as sh
+import pathya
+img_path = pathya.filePath()
 
 
 im = Image.open("/home/m/Envs/jn/chaya/img-3D/PA200001.JPG").convert('L')

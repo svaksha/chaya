@@ -8,6 +8,12 @@
 import glob, sys
 import os, os.path
 
+images_list = ['/P1010214.png',
+              '/P1010218.png',
+              '/P1010221.png',
+              ];
+
+
 def filePath(dirpath, file_name, fnprd, fnsfx):
     '''
     Construct filePath from inputs with a decorator function that expects
@@ -34,19 +40,12 @@ def fullPath(fn):
     def wrap_fullPath():    # my decorator wrapper
         image_dir = '/images'
         for imgcount in range(3):
-            image = imgcount + 1
+            count += 1
             print ('image')
-            image1 = '/P1010214.png'
-            image2 = '/P1010218.png'
-            image3 = '/P1010221.png'
+
         param_file = os.path.join(dirpath, image_dir, image)
     return wrap_fullPath
 
 @filePath
 @fullPath
 
-
-if __name__ == '__main__':
-    funcout1 = filePath(fnoutpath)
-    print ('fnoutpath=', fncout1)
-    main()

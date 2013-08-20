@@ -11,11 +11,12 @@ from numpy import array, newaxis
 from PIL.Image import core as _imaging
 import glob, sys
 import os, os.path
-# import pathya
-# img = pathya.filePath()
+import pathya
+img = pathya.filePath()
+img_path = pathya.fullPath()
 
 
-def image():
+def imageBuddha():
     img1 = pix1
     pix1 = Image.open("/images/P1010214.png")
     # pix2 = Image.open("/images/P1010218.png")

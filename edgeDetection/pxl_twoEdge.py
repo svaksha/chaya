@@ -1,12 +1,8 @@
 #!/usr/bin/env python3.3
-# -*- coding: utf-8 -*-
 ###########################################################################
-"""
-# Created on Mon Nov 19 10:15:32 2012
 # COPYRIGHT © 2012. SVAKSHA, <https://github.com/svaksha>, AllRightsReserved.
 # LICENSE: AGPLv3 LICENSE <http://www.gnu.org/licenses/agpl.html>
 # All copies must retain this Copyright notice and this permission notice.
-"""
 ###########################################################################
 
 import numpy
@@ -20,7 +16,7 @@ import pathya
 img_path = pathya.filePath()
 
 
-im = Image.open("/home/m/Envs/jn/chaya/img-3D/PA200001.JPG").convert('L')
+im = Image.open("/PA200001.JPG").convert('L')
 im.show()
 print (im.size)        # 2560 x 1920 pixels
 

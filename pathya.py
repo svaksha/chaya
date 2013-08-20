@@ -18,7 +18,7 @@ def filePath(dirpath, file_name, fnprd, fnsfx):
     original function so it can execute code before and after it.
     '''
     file_name = os.path.abspath(dirpath, fnprd, fnsfx)
-    def wrap_filePath():   # my decorator
+    def wrap_filePath():   # my decorator wrapper
         out_file_name = (file_name + fnprd + fnsfx)
         fnoutpath = os.path.join(dirpath, out_file_name)
         print ('running from %s' % os.path.abspath(fnoutpath))
@@ -33,7 +33,7 @@ def fullPath(fn):
     full_path = os.path.realpath(__file__)
     dirpath, prog_file = os.path.split(full_path)
 
-    def wrap_fullPath():    # my decorater
+    def wrap_fullPath():    # my decorator wrapper
         image_dir = '/images'
         for imgcount in range(3):
             image = imgcount + 1
@@ -47,12 +47,6 @@ def fullPath(fn):
 @filePath
 @fullPath
 
-'''
-def hello():
-    return "hello world"
-print (hello()) ## returns <b><i>hello world</i></b>
-'''
-
 #==============================================================================
 #
 # def modulepath(local_function):
@@ -64,7 +58,6 @@ print (hello()) ## returns <b><i>hello world</i></b>
 #    print ('file is %s' % local_function)
 #    return os.path.abspath(inspect.getsourcefile(local_function))
 #==============================================================================
-
 
 if __name__ == '__main__':
     funcout1 = filePath(fnoutpath)

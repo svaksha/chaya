@@ -11,10 +11,8 @@ from numpy import array, newaxis
 from PIL import Image
 import glob, sys
 import os, os.path
-# locals
 # import pathya
 # img = pathya.filePath()
-# import chaya
 
 
 def image():
@@ -35,6 +33,7 @@ def image():
 bmap = np.array(img1, dtype=float)
 df = bmap / 256       # converts my image to floating types between 0 to 1
 print (df)
+
 
 def diagonalMatrix(dist=5):
     """

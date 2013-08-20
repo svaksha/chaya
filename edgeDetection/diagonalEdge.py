@@ -8,7 +8,7 @@
 import numpy
 import numpy as np
 from numpy import array, newaxis
-from PIL import Image
+from PIL.Image import core as _imaging
 import glob, sys
 import os, os.path
 # import pathya

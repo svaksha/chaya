@@ -8,8 +8,6 @@
 import glob, sys
 import os, os.path
 
-# http://stackoverflow.com/questions/739654/how-can-i-make-a-chain-of-function-decorators-in-python?rq=1
-
 def filePath(dirpath, file_name, fnprd, fnsfx):
     '''
     Construct filePath from inputs with a decorator function that expects
@@ -47,17 +45,6 @@ def fullPath(fn):
 @filePath
 @fullPath
 
-#==============================================================================
-#
-# def modulepath(local_function):
-#    '''
-#    returns the module path without the use of __file__.  Requires a function defined
-#    locally in the module.
-#    from http://stackoverflow.com/questions/729583/getting-file-path-of-imported-module
-#    '''
-#    print ('file is %s' % local_function)
-#    return os.path.abspath(inspect.getsourcefile(local_function))
-#==============================================================================
 
 if __name__ == '__main__':
     funcout1 = filePath(fnoutpath)

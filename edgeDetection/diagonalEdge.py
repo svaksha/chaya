@@ -8,12 +8,11 @@
 import numpy
 import numpy as np
 from numpy import array, newaxis
+import Image
 from PIL.Image import core as _imaging
 import glob, sys
 import os, os.path
 import pathya
-img = pathya.filePath()
-img_path = pathya.fullPath()
 
 
 def imageBuddha(image_path):
@@ -29,7 +28,7 @@ def convFloat(img):
     bmap = np.array(img, dtype=float)
     df = bmap / 256       # converts my image to floating types between 0 to 1
     print (df)
-return df
+    return df
 
 def diagonalMatrix(df, dist=5):
     """
@@ -41,7 +40,7 @@ def diagonalMatrix(df, dist=5):
     botLefttopRight = abs(np.subtract(df[0:-dist,dist:] , df[dist:,0:-dist]))
     print ("botLefttopRight", botLefttopRight)
     diaDD = topLeftbotRight + botLefttopRight
-return diaDD
+    return diaDD
 
 
 
@@ -56,5 +55,5 @@ if __name__ == '__main__':
         print ("Output of the diagonal MatriX", diaMatriX)
 
         diaMatriX = Image.fromarray(diaMatriX*256)
-        diaMatriX.show()        
+        diaMatriX.show()
 

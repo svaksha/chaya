@@ -19,10 +19,10 @@ def dirPath():
     '''
     full_path = os.path.realpath(__file__)
     dirpath, prog_file = os.path.split(full_path)
-return dirpath
+    return dirpath
 
-def imagePath(dir_path, count):    # my decorator wrapper
-        image_dir = 'images' +  count
-        image_filepath = os.path.join(dir_path, image_dir)
-        print (image_filepath)
-return image_filepath
+def imagePath(dir_path, count):
+    image_dir = images_list[count]
+    image_filepath = os.path.join(dir_path, image_dir)
+    print (image_filepath)
+    return image_filepath

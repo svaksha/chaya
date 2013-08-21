@@ -44,7 +44,7 @@ def diagonalMatrix(df, dist=5):
 
 
 if __name__ == '__main__':
-    # build path to import modules via pathya.py
+    # build paths to import modules via pathya.py
     full_path = os.path.realpath(__file__)
     dir_path, prog_file = os.path.split(full_path)
     parent_root = os.path.abspath(os.path.join(dir_path, os.pardir))

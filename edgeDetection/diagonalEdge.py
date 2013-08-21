@@ -8,11 +8,11 @@
 import numpy
 import numpy as np
 from numpy import array, newaxis
-#from Pillow import PIL.ImageFile.Parser #import ImageFileIO
+# from Pillow import PIL.ImageFile.Parser #import ImageFileIO
 from PIL import Image
 import glob, sys
 import os, os.path
-import pathya
+
 
 def imageBuddha(image_path):
     pix = Image.open(image_path)
@@ -25,7 +25,7 @@ def convFloat(img):
     # shades of gray are coded as unsigned one-byte integer values with 0
     # corresponding to black and 255 corresponding to white.
     bmap = np.array(img, dtype=float)
-    df = bmap / 256       # converts my image to floating types between 0 to 1
+    df = bmap/256       # converts my image to floating types between 0 to 1
     print (df)
     return df
 
@@ -44,13 +44,23 @@ def diagonalMatrix(df, dist=5):
 
 
 if __name__ == '__main__':
-    dirpath = pathya.dirPath()
+    # build path to import modules via pathya.py
+    full_path = os.path.realpath(__file__)
+    dir_path, prog_file = os.path.split(full_path)
+    parent_root = os.path.abspath(os.path.join(dir_path, os.pardir))
+    label_daemon = 'daemon'
+    pathya_path = os.path.join(parent_root, label_daemon)
+    sys.path.append(pathya_path)
+    import pathya
+
     for count in range(3):
-        image_path = pathya.imagePath(dirpath, count)
+        label_images = 'images'
+        images_path = os.path.join(parent_root, label_images)
+        image_path = pathya.imagePath(images_path, count)
         img = imageBuddha(image_path)
         df = convFloat(img)
         diaMatriX = diagonalMatrix(df, 5)
-        #diagonal computation output of a (n-1) X (n-1) matrix:
+        # diagonal computation output of a (n-1) X (n-1) matrix:
         print ("Output of the diagonal MatriX", diaMatriX)
 
         diaMatriX = Image.fromarray(diaMatriX*256)

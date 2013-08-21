@@ -8,9 +8,9 @@
 import glob, sys
 import os, os.path
 
-images_list = ['/P1010214.png',
-              '/P1010218.png',
-              '/P1010221.png',
+images_list = ['P1010214.png',
+              'P1010218.png',
+              'P1010221.png',
               ];
 
 def dirPath():
@@ -26,24 +26,3 @@ def imagePath(dir_path, count):    # my decorator wrapper
         image_filepath = os.path.join(dir_path, image_dir)
         print (image_filepath)
 return image_filepath
-
-
-
-def fullPath(fn):
-     '''
-     build path for parameter file
-     '''
-     full_path = os.path.realpath(__file__)
-     dirpath, prog_file = os.path.split(full_path)
-
-     def wrap_fullPath():    # my decorator wrapper
-         image_dir = '/images'
-
-         param_file = os.path.join(dirpath, image_dir, image)
-     return wrap_fullPath
-
-#==============================================================================
-# @filePath
-# @fullPath
-#==============================================================================
-

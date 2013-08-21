@@ -1,19 +1,18 @@
 #!/usr/bin/env python3.3
-###########################################################################
-# COPYRIGHT © 2012. SVAKSHA, <https://github.com/svaksha>, AllRightsReserved.
-# LICENSE: AGPLv3 LICENSE <http://www.gnu.org/licenses/agpl.html>
+###############################################################################
+# Copyright © 2012-Now [SVAKSHA](https://github.com/svaksha) AllRightsReserved.
+# License: AGPLv3 License <http://www.gnu.org/licenses/agpl.html>
 # All copies must retain this Copyright notice and this permission notice.
-###########################################################################
+###############################################################################
 
 import numpy
 import numpy as np
 from numpy import array, newaxis
-import Image
-from PIL.Image import core as _imaging
+#from Pillow import PIL.ImageFile.Parser #import ImageFileIO
+from PIL import Image
 import glob, sys
 import os, os.path
 import pathya
-
 
 def imageBuddha(image_path):
     pix = Image.open(image_path)

@@ -11,22 +11,22 @@ from numpy import array, newaxis
 from PIL.Image import core as _imaging
 import glob, sys
 import os, os.path
+
 import pathya
 img = pathya.filePath()
 img_path = pathya.fullPath()
 
 
-def imageBuddha():
+def pixBuddha():
     img1 = pix1
     pix1 = Image.open("/images/P1010214.png")
-    # pix2 = Image.open("/images/P1010218.png")
-    # pix3 = Image.open("/images/P1010221.png")
 
     pix1.show()
     img1 = pix1.convert('L')
     # img2 = pix2.convert('L')
     # img3 = pix3.convert('L')
     return img
+
 
 # converting the greyscale image into a floating type
 # shades of gray are coded as unsigned one-byte integer values with 0
@@ -56,4 +56,7 @@ diaMatriX.show()
 
 
 if __name__ == '__main__':
+    for imgcount in range(3):
+        count += 1
+        print ('image')
      main()

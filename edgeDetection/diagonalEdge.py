@@ -8,7 +8,6 @@
 import numpy
 import numpy as np
 from numpy import array, newaxis
-# from Pillow import PIL.ImageFile.Parser #import ImageFileIO
 from PIL import Image
 import glob, sys
 import os, os.path

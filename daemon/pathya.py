@@ -21,6 +21,7 @@ def dirPath():
     dirpath, prog_file = os.path.split(full_path)
     return dirpath
 
+
 def imagePath(dir_path, count):
     image_dir = images_list[count]
     image_filepath = os.path.join(dir_path, image_dir)

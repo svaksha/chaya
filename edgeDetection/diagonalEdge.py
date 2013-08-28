@@ -17,13 +17,15 @@ def imageBuddha(image_path):
     pix = Image.open(image_path)
     pix.show()
     img = pix.convert('L')
+    imcropd = img.crop([0,0,5,5])
+    imcropd.size
     return img
 
-def convFloat(img):
+def convFloat(imgcropd):
     # converting the greyscale image into a floating type
     # shades of gray are coded as unsigned one-byte integer values with 0
     # corresponding to black and 255 corresponding to white.
-    bmap = np.array(img, dtype=float)
+    bmap = np.array(imgcropd, dtype=float)
     df = bmap/256       # converts my image to floating types between 0 to 1
     print (df)
     return df

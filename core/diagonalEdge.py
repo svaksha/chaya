@@ -21,6 +21,7 @@ def imageBuddha(image_path):
     imcropd.size
     return img
 
+
 def convFloat(imgcropd):
     # converting the greyscale image into a floating type
     # shades of gray are coded as unsigned one-byte integer values with 0
@@ -29,6 +30,7 @@ def convFloat(imgcropd):
     df = bmap/256       # converts my image to floating types between 0 to 1
     print (df)
     return df
+
 
 def diagonalMatrix(df, dist=5):
     """

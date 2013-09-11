@@ -1,4 +1,4 @@
-CHAYA, (Sanskrit: छाय)
+ CHAYA, (Sanskrit: छाय)
 ======================================
 
 "chAya" (Sanskrit: छाय), is a noun used to describe,
@@ -17,8 +17,9 @@ scientific libraries.
 
 LICENSE
 ---------
-COPYRIGHT © 2012 SVAKSHA https://github.com/svaksha AllRightsReserved.
+COPYRIGHT © 2012 SVAKSHA, https://github.com/svaksha . AllRightsReserved.
 ~~~~~~~~~~~~~~~~~~~~~~~~~
+
 AGPLv3 LICENSE : http://www.gnu.org/licenses/agpl.html
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 

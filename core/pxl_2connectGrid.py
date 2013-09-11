@@ -72,4 +72,7 @@ def gridRowCol(diffCol, diffRow):
             gridRC = diffRow[:,newaxis] + diffCol[:,newaxis]
             continue
         print ("gridRC", gridRC)
+
 gridRowCol(diffCol, diffRow)
+for index in np.ndindex(3, 2, 1):
+    print (index)

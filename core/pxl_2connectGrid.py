@@ -15,23 +15,28 @@ import shutil as sh
 import pathya
 img_path = pathya.filePath()
 
+def imageBuddha(image_path):
+    pix = Image.open(image_path)
+    pix.show()
+    img = pix.convert('L')
+    imcropd = img.crop([0,0,5,5])
+    imcropd.size
+    return img
 
-im = Image.open("/PA200001.JPG").convert('L')
-im.show()
-print (im.size)        # 2560 x 1920 pixels
-
-# converting the greyscale image into a floating type
-# shades of gray are coded as unsigned one-byte integer values with 0
-# corresponding to black and 255 corresponding to white.
-bmap = np.array(im, dtype=float)
-bmfloat = bmap/256        # convert image to floating types bet 0 to 1
-print (bmfloat)
+def convFloat(imgcropd):
+    # converting the greyscale image into a floating type
+    # shades of gray are coded as unsigned one-byte integer values with 0
+    # corresponding to black and 255 corresponding to white.
+    bmap = np.array(imgcropd, dtype=float)
+    df = bmap/256       # converts my image to floating types between 0 to 1
+    print (df)
+    return df
 
 def diffRow():
-    newRow = np.array(bmfloat[:-1, :-1])    #last elem, lastElem
+    newRow = np.array(imgcropd[:-1, :-1])    #last elem, lastElem
     for row in range(len(newRow)):
         for col in range(len(newRow)):
-            newRow[row][col] = bmfloat[row][col] - bmfloat[row+1][col]
+            newRow[row][col] = imgcropd[row][col] - imgcropd[row+1][col]
             continue
     print ("printing newRow")
     print (newRow)
@@ -44,10 +49,10 @@ def diffCol():
         for column in range(len(a[0])): #start from 0-th position
             answer[row][column]=a[row][column]-a[row][column+1 ]
 
-    newCol = np.array(bmfloat[:-1, :-1]) #last elem, lastElem
+    newCol = np.array(imgcropd[:-1, :-1]) #last elem, lastElem
     for row in range(len(newCol)):
         for col in range(len(newCol)):
-            newCol[row][col] = bmfloat[row][col] - bmfloat[row][col+1]
+            newCol[row][col] = imgcropd[row][col] - imgcropd[row][col+1]
             continue
     print ("printing newCol")
     print (newCol)

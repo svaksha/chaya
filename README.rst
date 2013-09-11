@@ -1,4 +1,4 @@
- CHAYA, (Sanskrit: छाय)
+CHAYA, (Sanskrit: छाय)
 ======================================
 
 "chAya" (Sanskrit: छाय), is a noun used to describe,

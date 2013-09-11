@@ -81,3 +81,28 @@ def gridRowCol(diffCol, diffRow):
 gridRowCol(diffCol, diffRow)
 for index in np.ndindex(3, 2, 1):
     print (index)
+
+
+if __name__ == '__main__':
+    # build paths to import modules via pathya.py
+    full_path = os.path.realpath(__file__)
+    dir_path, prog_file = os.path.split(full_path)
+    parent_root = os.path.abspath(os.path.join(dir_path, os.pardir))
+    label_daemon = 'daemon'
+    pathya_path = os.path.join(parent_root, label_daemon)
+    sys.path.append(pathya_path)
+    import pathya
+
+    for count in range(3):
+        label_images = 'images'
+        images_path = os.path.join(parent_root, label_images)
+        image_path = pathya.imagePath(images_path, count)
+        img = imageBuddha(image_path)
+        df = convFloat(img)
+        diaMatriX = diagonalMatrix(df, 5)
+        # diagonal computation output of a (n-1) X (n-1) matrix:
+        print ("Output of the diagonal MatriX", diaMatriX)
+
+        diaMatriX = Image.fromarray(diaMatriX*256)
+        diaMatriX.show()
+

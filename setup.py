@@ -2,20 +2,20 @@ from setuptools import setup, find_packages
 import os
 import chaya
 
-def readme():
+def read():
     with open('README.rst') as f:
-        return f.read()
+        return f.readfile()
 
 setup(name='chaya',
       version = chaya.__version__,
-      description ='Learn computer vision, edge detection',
-      long_description = readme(),
       author = 'SVAKSHA',
       author_email = 'svaksha@gmail.com',
       url = 'https://github.com/svaksha/chaya',
+      description ='Learn computer vision, edge detection',
+      long_description = open('README.rst').read()
       packages = ['chaya'],
-      package_data={'chaya': ['LICENSE.rst']},
-      include_package_data=True,
+      package_data = {'chaya': ['LICENSE.rst']},
+      include_package_data = True,
       install_requires = ['Cython==0.19.1',
                           'Pillow==2.1.0',
                           'distribute==0.6.34',

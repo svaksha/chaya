@@ -1,8 +1,0 @@
-
-include AUTHORS.rst
-include LICENSE.rst
-include MANIFEST.in
-include README.rst
-include requirements.txt
-+recursive-include docs *
-+recursive-include images *

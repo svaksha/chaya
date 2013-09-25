@@ -55,6 +55,15 @@ if __name__ == '__main__':
     sys.path.append(pathya_path)
     import pathya
 
+    def _safe_exists(path):
+        """
+        Check path, but don't let exceptions raise
+        """
+        try:
+            return os.path.exists(path)
+        except Exception:
+            return False
+
     for count in range(3):
         label_images = 'images'
         images_path = os.path.join(parent_root, label_images)

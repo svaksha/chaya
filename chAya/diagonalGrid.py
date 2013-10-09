@@ -5,6 +5,7 @@
 # All copies must retain this permission notice with the copyright notice.
 ###############################################################################
 
+# Stdlib imports
 import numpy
 import numpy as np
 from numpy import array, newaxis

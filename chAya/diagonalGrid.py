@@ -1,6 +1,6 @@
 #!/usr/bin/env python3.3
 ###############################################################################
-# Copyright © 2012-Now, SVAKSHA (https://github.com/svaksha) AllRightsReserved.
+# Copyright © 2012-Now: SVAKSHA (https://github.com/svaksha) AllRightsReserved.
 # License: AGPLv3 License <http://www.gnu.org/licenses/agpl.html>
 # All copies must retain this permission notice with the copyright notice.
 ###############################################################################
@@ -24,9 +24,11 @@ def imageBuddha(image_path):
 
 
 def convFloat(imgcropd):
-    # converting the greyscale image into a floating type
-    # shades of gray are coded as unsigned one-byte integer values with 0
-    # corresponding to black and 255 corresponding to white.
+    """
+    Converting the greyscale image into a floating type. Shades of gray are
+    coded as unsigned one-byte integer values with 0 corresponding to black
+    and 255 corresponding to white.
+    """
     bmap = np.array(imgcropd, dtype=float)
     df = bmap/256       # converts my image to floating types between 0 to 1
     print (df)

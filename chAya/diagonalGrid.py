@@ -13,7 +13,6 @@ from PIL import Image
 import glob, sys
 import os, os.path
 
-
 def imageBuddha(image_path):
     pix = Image.open(image_path)
     pix.show()
@@ -46,6 +45,8 @@ def diagonalMatrix(df, dist=5):
     print ("botLefttopRight", botLefttopRight)
     diaDD = topLeftbotRight + botLefttopRight
     return diaDD
+
+
 
 
 if __name__ == '__main__':

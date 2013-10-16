@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Created on Wed Oct  9 12:29:03 2013
+Created on Wed Oct 9 12:29:03 2013
 @author: @svaksha
 """
 
@@ -14,6 +14,7 @@ __pycache__
 *.swp
 *.egg
 *.egg-info
+*.py[co]
 .installed.cfg
 bin
 build
@@ -42,6 +43,10 @@ nosetests.xml
 *.log
 *.sql
 *.sqlite
+
+# Mr Developer
+.mr.developer.cfg
+
 
 # OS generated files
 .DS_Store

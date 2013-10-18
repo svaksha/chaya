@@ -21,7 +21,6 @@ LONG_DESCRIPTION=open('README.rst').read()
 PACKAGES=['chaya'],
 PACKAGE_DATA={'chaya': ['LICENSE.rst',
                               'AUTHORS.rst',
-                              'MANIFEST.in',
                               'README.rst',
                               ]}
 

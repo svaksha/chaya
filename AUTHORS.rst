@@ -1,5 +1,5 @@
 AUTHORS
 ---------
-Copyright © 2013 SVAKSHA, https://github.com/svaksha . AllRightsReserved.
+COPYRIGHT © 2012-Now. `SVAKSHA <https://github.com/svaksha>`_ All Rights Reserved.
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 

@@ -1,25 +1,33 @@
 #!/usr/bin/env python3.3
+#
 ###############################################################################
 # Copyright © 2012-Now: SVAKSHA (https://github.com/svaksha) AllRightsReserved.
 # License: AGPLv3 License <http://www.gnu.org/licenses/agpl.html>
 # All copies must retain this permission notice with the copyright notice.
 ###############################################################################
+#
+# Edge Detection, http://en.wikipedia.org/wiki/Edge_detection
 
-# Stdlib imports
+
+##Stdlib imports
 import numpy
 import numpy as np
 from numpy import array, newaxis
 from PIL import Image
-import glob, sys
+import glob
 import os, os.path
+import sys
+#sys.path.append("..")
 
-def imageBuddha(image_path):
-    pix = Image.open(image_path)
+
+
+def imageBuddha(pathToImages):
+    pix = Image.open(pathToImages)
     pix.show()
-    img = pix.convert('L')
-    imcropd = img.crop([0,0,5,5])
+    aks = pix.convert('L')
+    imcropd = aks.crop([0,0,5,5])
     imcropd.size
-    return img
+    return imcropd
 
 
 def convFloat(imgcropd):
@@ -39,25 +47,21 @@ def diagonalMatrix(df, dist=5):
     The distance can be increased or decreased for finer or coarser edge
     detection.
     """
-    topLeftbotRight = abs(np.subtract(df[0:-dist,0:-dist] , df[dist:,dist:]))
-    print ("topLeftbotRight", topLeftbotRight)
-    botLefttopRight = abs(np.subtract(df[0:-dist,dist:] , df[dist:,0:-dist]))
-    print ("botLefttopRight", botLefttopRight)
-    diaDD = topLeftbotRight + botLefttopRight
+    tLbR = abs(np.subtract(df[0:-dist,0:-dist] , df[dist:,dist:]))
+    print ("tLbR", tLbR)
+    bLtR = abs(np.subtract(df[0:-dist,dist:] , df[dist:,0:-dist]))
+    print ("bLtR", bLtR)
+    diaDD = tLbR + bLtR
     return diaDD
-
 
 
 
 if __name__ == '__main__':
     # build paths to import modules via pathya.py
-    full_path = os.path.realpath(__file__)
-    dir_path, prog_file = os.path.split(full_path)
-    parent_root = os.path.abspath(os.path.join(dir_path, os.pardir))
-    label_daemon = 'daemon'
-    pathya_path = os.path.join(parent_root, label_daemon)
-    sys.path.append(pathya_path)
-    import pathya
+    sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..','daemon')))
+    from pathya import dirPath, imageCounter
+    dir_daemon, dir_chaya, dir_api, dir_chAya, dir_images = dirPath()
+
 
     def _safe_exists(path):
         """
@@ -68,16 +72,17 @@ if __name__ == '__main__':
         except Exception:
             return False
 
+    count = 1
     for count in range(3):
-        label_images = 'images'
-        images_path = os.path.join(parent_root, label_images)
-        image_path = pathya.imagePath(images_path, count)
-        img = imageBuddha(image_path)
-        df = convFloat(img)
+        image_label = imageCounter(count)
+        pathToImages = os.path.join(dir_images, image_label)
+        print(pathToImages)
+        aks = imageBuddha(image_label)
+        df = convFloat(imgcropd)
         diaMatriX = diagonalMatrix(df, 5)
-        # diagonal computation output of a (n-1) X (n-1) matrix:
+
+      # diagonal computation output of a (n-1) X (n-1) matrix:
         print ("Output of the diagonal MatriX", diaMatriX)
 
         diaMatriX = Image.fromarray(diaMatriX*256)
         diaMatriX.show()
-

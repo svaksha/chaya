@@ -16,6 +16,7 @@ image_list = ['NamdrolingMonastry.png',
               'Amitabha.png',
               ];
 
+
 def dirPath():
     '''
     build path for parameter file

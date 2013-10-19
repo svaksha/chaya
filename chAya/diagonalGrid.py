@@ -18,10 +18,6 @@ import sys
 #sys.path.append("..")
 ##=============================================================================
 
-image_list = ['NamdrolingMonastry.png',
-              'Buddha.png',
-              'Amitabha.png',
-              ];
 
 
 def imageBuddha(pathToImages):
@@ -62,7 +58,7 @@ def diagonalMatrix(df, dist=5):
 if __name__ == '__main__':
     # build paths to import modules via pathya.py
     sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..','daemon')))
-    from pathya import dirPath, imageCounter
+    from pathya import dirPath, imageCounter, image_list
     dir_daemon, dir_chaya, dir_api, dir_chAya, dir_images = dirPath()
 
 
@@ -74,6 +70,7 @@ if __name__ == '__main__':
             return os.path.exists(path)
         except Exception:
             return False
+
 
     for image in image_list:
         image_label = image

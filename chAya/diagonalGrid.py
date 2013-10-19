@@ -7,10 +7,8 @@
 ###############################################################################
 #
 # Edge Detection, http://en.wikipedia.org/wiki/Edge_detection
-
-
-##Stdlib imports
-import numpy
+##=============================================================================
+#
 import numpy as np
 from numpy import array, newaxis
 from PIL import Image
@@ -18,7 +16,12 @@ import glob
 import os, os.path
 import sys
 #sys.path.append("..")
+##=============================================================================
 
+image_list = ['NamdrolingMonastry.png',
+              'Buddha.png',
+              'Amitabha.png',
+              ];
 
 
 def imageBuddha(pathToImages):
@@ -27,7 +30,7 @@ def imageBuddha(pathToImages):
     aks = pix.convert('L')
     imcropd = aks.crop([0,0,5,5])
     imcropd.size
-    return imcropd
+    return aks
 
 
 def convFloat(imgcropd):
@@ -72,13 +75,11 @@ if __name__ == '__main__':
         except Exception:
             return False
 
-    count = 1
-    for count in range(3):
-        image_label = imageCounter(count)
-        pathToImages = os.path.join(dir_images, image_label)
-        print(pathToImages)
-        aks = imageBuddha(image_label)
-        df = convFloat(imgcropd)
+    for image in image_list:
+        image_label = image
+        pathToimage = os.path.join(dir_images, image_label)
+        aks = imageBuddha(pathToimage)
+        df = convFloat(aks)
         diaMatriX = diagonalMatrix(df, 5)
 
       # diagonal computation output of a (n-1) X (n-1) matrix:

@@ -1,11 +1,10 @@
-#!/usr/bin/env python3.3
-
 from setuptools import setup, find_packages
 import os, sys
 import shutil
 import warnings
-
 import chaya
+
+
 
 def read():
     with open('README.rst') as f:
@@ -24,6 +23,7 @@ PACKAGE_DATA={'chaya': ['LICENSE.rst',
                               'README.rst',
                               ]}
 
+
 setup(name=PKGNAME,
       version=VERSION,
       maintainer=AUTHOR,
@@ -35,13 +35,18 @@ setup(name=PKGNAME,
       packages=['chaya'],
       package_data={'chaya': ['LICENSE.rst',
                               'AUTHORS.rst',
-                              'MANIFEST.in',
                               'README.rst',
                               ]},
       include_package_data = True,
       install_requires = ['Cython==0.19.1',
                           'Pillow==2.1.0',
                           'numpy==1.7.1',
+                          'bottle==0.11.6',
+                          'h5py==2.2.0',
+                          'numba==0.10.0',
+                          'plotly==0.5',
+                          'requests==2.0.0',
+                          'scipy==0.12.0',
                           ],
       classifiers = ['Development Status :: 13.08 - Alpha',
                      'Intended Audience :: Developers',
@@ -51,8 +56,7 @@ setup(name=PKGNAME,
                      ],
       packages = ['chaya',
                   'chaya.chAya',
-                  'chaya.tests',
-                  ],   #TODO
+                  'chaya.tests', #TODO
+                  ],
       )
-
 

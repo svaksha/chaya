@@ -1,16 +1,19 @@
 #!/usr/bin/env python3.3
 ###############################################################################
-# Copyright © 2012-Now [SVAKSHA](https://github.com/svaksha) AllRightsReserved.
+# Copyright © 2012-Now, SVAKSHA (https://github.com/svaksha) AllRightsReserved.
 # License: AGPLv3 License <http://www.gnu.org/licenses/agpl.html>
-# All copies must retain this Copyright notice and this permission notice.
+# All copies must retain this permission notice with the copyright notice.
 ###############################################################################
-
-import glob, sys
+#
+import glob
+import sys
 import os, os.path
+##=============================================================================
 
-images_list = ['P1010214.png',
-              'P1010218.png',
-              'P1010221.png',
+
+image_list = ['NamdrolingMonastry.png',
+              'Buddha.png',
+              'Amitabha.png',
               ];
 
 def dirPath():
@@ -18,11 +21,16 @@ def dirPath():
     build path for parameter file
     '''
     full_path = os.path.realpath(__file__)
-    dirpath, prog_file = os.path.split(full_path)
-    return dirpath
+    dir_daemon, prog_file = os.path.split(full_path)
+    dir_chaya = os.path.abspath(os.path.join(dir_daemon,os.pardir))
+    dir_api = os.path.join(dir_chaya,"api")
+    dir_chAya = os.path.join(dir_chaya,"chAya")
+    dir_images = os.path.join(dir_chaya,"images")
+    return dir_daemon, dir_chaya, dir_api, dir_chAya, dir_images
 
-def imagePath(dir_path, count):
-    image_dir = images_list[count]
-    image_filepath = os.path.join(dir_path, image_dir)
-    print (image_filepath)
-    return image_filepath
+count = 1
+def imageCounter(count):
+    dir_images_png = image_list[count]
+    return dir_images_png
+imageCounter(count)
+

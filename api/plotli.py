@@ -34,4 +34,3 @@ if __name__ == '__main__':
     # build paths to import modules via pathya.py
     print('testing')
     import pathya
-

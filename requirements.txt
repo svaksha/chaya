@@ -5,7 +5,11 @@ distribute==0.6.34
 h5py==2.2.0
 numba==0.10.0
 numpy==1.7.1
+pandas==0.12.0
 plotly==0.5
+python-dateutil==2.1
+pytz==2013.7
 requests==2.0.0
 scipy==0.12.0
+six==1.4.1
 yolk==0.4.3

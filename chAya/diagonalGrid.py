@@ -15,6 +15,9 @@ from PIL import Image
 import glob
 import os, os.path
 import sys
+import time
+import io, csv
+import argparse
 #sys.path.append("..")
 ##=============================================================================
 
@@ -51,15 +54,26 @@ def diagonalMatrix(df, dist=5):
     bLtR = abs(np.subtract(df[0:-dist,dist:] , df[dist:,0:-dist]))
     print ("bLtR", bLtR)
     diaDD = tLbR + bLtR
+
+    # Dump output to CSV
+    for darray in image_list:
+        dacsv = darray
+        pathToimage = os.path.join(dir_datum, dacsv)
+        output = np.asarray(diaDD)
+        np.savetxt("out_namdroling_monastry.csv", output, delimiter=",")
+        np.savetxt("out_buddha.csv", output, delimiter=",")
+        np.savetxt("out_amitabha.csv", output, delimiter=",")
     return diaDD
 
 
-
+##=============================================================================
+# MAIN
+##=============================================================================
 if __name__ == '__main__':
     # build paths to import modules via pathya.py
     sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..','daemon')))
-    from pathya import dirPath, imageCounter, image_list
-    dir_daemon, dir_chaya, dir_api, dir_chAya, dir_images = dirPath()
+    from pathya import *
+    dir_daemon, dir_chaya, dir_api, dir_chAya, dir_datum = dirPath()
 
 
     def _safe_exists(path):
@@ -74,13 +88,14 @@ if __name__ == '__main__':
 
     for image in image_list:
         image_label = image
-        pathToimage = os.path.join(dir_images, image_label)
+        pathToimage = os.path.join(dir_datum, image_label)
         aks = imageBuddha(pathToimage)
         df = convFloat(aks)
         diaMatriX = diagonalMatrix(df, 5)
 
-      # diagonal computation output of a (n-1) X (n-1) matrix:
+        # diagonal computation output of a (n-1) X (n-1) matrix:
         print ("Output of the diagonal MatriX", diaMatriX)
-
         diaMatriX = Image.fromarray(diaMatriX*256)
         diaMatriX.show()
+
+

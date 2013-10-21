@@ -26,12 +26,12 @@ def dirPath():
     dir_chaya = os.path.abspath(os.path.join(dir_daemon,os.pardir))
     dir_api = os.path.join(dir_chaya,"api")
     dir_chAya = os.path.join(dir_chaya,"chAya")
-    dir_images = os.path.join(dir_chaya,"images")
-    return dir_daemon, dir_chaya, dir_api, dir_chAya, dir_images
+    dir_datum = os.path.join(dir_chaya,"datum")
+    return dir_daemon, dir_chaya, dir_api, dir_chAya, dir_datum
 
 count = 1
 def imageCounter(count):
-    dir_images_png = image_list[count]
-    return dir_images_png
+    dir_datum_png = image_list[count]
+    return dir_datum_png
 imageCounter(count)
 

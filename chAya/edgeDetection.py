@@ -19,7 +19,7 @@ import scipy as sci
 from scipy.signal import freqz
 from scipy.misc import toimage
 from scipy.ndimage.interpolation import zoom
-from sklearn.feature_extraction import image
+#from sklearn.feature_extraction import image
 import matplotlib.pyplot as plt
 
 ##==============================================================================
@@ -28,8 +28,8 @@ import matplotlib.pyplot as plt
 
 def datumImage(pathToImages):
     pix = np.array(Image.open(pathToImages).convert('RGB'))
-    pix.show()
-    pix = np.array((1024,1024))
+#    pix.show()
+ #   pix = np.array((1024,1024))
     print(pix.dtype, pix.shape, pix.size)
     print(type(pix))
     imarray = np.array(pix.astype(float))

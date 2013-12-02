@@ -4,8 +4,8 @@ CHAYA, (Sanskrit: छाय)
 
 This repo is my attempt to learn image manipulation, morphing, `edge detection <http://en.wikipedia.org/wiki/Edge_detection>`_, and other computer vision techniques using scientific libraries like Pandas, PIL, Numpy, et al...
 
-To Install, clone, then use 'python setup.py install'
-
+* To Install, clone, then use 'python setup.py install'
+* File bugs here: ` https://github.com/svaksha/chaya/issues <https://github.com/svaksha/chaya/issues>`_
 
 LICENSE
 ---------

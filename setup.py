@@ -1,9 +1,12 @@
+#!/usr/bin/env python3.3
+# encoding: utf-8
+################################################################################
+
 from setuptools import setup, find_packages
 import os, sys
 import shutil
 import warnings
 import chaya
-
 
 
 def read():
@@ -52,7 +55,7 @@ setup(name=PKGNAME,
       classifiers = ['Development Status :: 13.10 - Alpha',
                      'Intended Audience :: Developers',
                      'License :: OSI Approved :: AGPLv3 License',
-                     'Programming Language :: Python :: 3.3',
+                     'Programming Language :: Python :: 2.7, 3.3',
                      'Topic :: Graphics :: Computer Vision',
                      ],
       packages = ['chaya',

@@ -1,17 +1,20 @@
-#!/usr/bin/env python3.3
-# encoding: utf-8
 ################################################################################
-# Copyright© 2012-Now SVAKSHA <https://github.com/svaksha> AllRightsReserved.
-# Distributed under the AGPLv3 License <http://www.gnu.org/licenses/agpl.html>
-# All copies must retain this permission notice with the copyright notice.
+"""
+COPYRIGHT: 2012-Now, SVAKSHA :: https://github.com/svaksha
+LICENSE: AGPLv3 License <http://www.gnu.org/licenses/agpl.html>.
+All copies must retain this permission notice with the copyright notice.
+"""
 ################################################################################
-# IMPORTS
-##------------------------------------------------------------------------------
-from __future__ import absolute_import, division, print_function, unicode_literals ##python3.x
+__author__ = 'SVAKSHA'
+__copyright__ = 'Copyright (c) 2012-Now, SVAKSHA'
+__license__ = 'AGPLv3'
+
+from __future__ import (absolute_import, division,print_function, unicode_literals)
 import glob, sys
 import os, os.path
 import time, pdb
 import io
+# Scientific pkg
 import numpy as np
 from numpy import array, newaxis
 from PIL import Image, ImageMath
@@ -19,9 +22,13 @@ import scipy as sci
 from scipy.signal import freqz
 from scipy.misc import toimage
 from scipy.ndimage.interpolation import zoom
-#from sklearn.feature_extraction import image
 import matplotlib.pyplot as plt
-
+# experimenting with parallel processing, https://medium.om/p/40e9b2b36148
+from multiprocessing import Pool
+from multiprocessing.dummy import Pool as tPool
+#from chaya.daemon import pathya # dirPath, imageCounter
+from chaya import datum
+#
 ##==============================================================================
 ## PROGRAM USECASE: Edge Detection, http://en.wikipedia.org/wiki/Edge_detection
 ##------------------------------------------------------------------------------
@@ -34,6 +41,7 @@ def datumImage(pathToImages):
     print(type(pix))
     imarray = np.array(pix.astype(float))
     print(imarray)
+    pdb.set_trace()
     return imarray
 
 
@@ -91,7 +99,18 @@ if __name__ == '__main__':
 
         # diagonal computation output of a (n-1) X (n-1) matrix:
         print ("Output of the diagonal MatriX", diaMatriX)
-        # Takes a numpy array and returns a PIL imagea
-        newMatrix = Image.fromarray(diaMatriX * 255, np.uint8(diaMatriX))
-        newMatrix.show()
-        newMatrix.save('newfile.jpeg')
+
+        # Take numpy array, rescale to 0-255, convert to uint8, return PIL image.
+        rescaledMatrix = (255.0 / imarray.max() * (imarray - imarray.min())).astype(np.uint8)
+        #rescaledMatrix = Image.fromarray(diaMatriX * 255, np.uint8(diaMatriX))
+        #rescaledMatrix = (255.0 / rescaledMatrix.max() * (rescaledMatrix - rescaledMatrix.min())).astype(np.uint8)
+        #rescaledMatrix = Image.fromarray(rescaledMatrix)
+        rescaledMatrix.show()
+        rescaledMatrix.save('newImg.png')
+#==============================================================================
+#
+#         rescaledMatrix[:] = imarray[:]
+#         %timeit rescaledMatrix[:] = imarray[:]; sort(rescaledMatrix)
+#==============================================================================
+
+

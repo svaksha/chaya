@@ -1,54 +1,125 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Wed Oct 9 12:29:03 2013
-@author: @svaksha
-"""
+###############################################################################
+# Author: SVAKSHA, Wednesday 09 Oct 2013 12:29:03 PM IST 
+###############################################################################
 
-# C extensions
-*.so
 
-# Packages
-__pycache__
+#====================================================
+# GENERAL
+#====================================================
+tags
+MANIFEST
+
+
+#====================================================
+# USE GLOB SYNTAX
+#====================================================
+syntax: glob
+*.elc
+
+
+#====================================================
+# IPYTHON Notebooks
+#====================================================
+.ipynb_checkpoints/*
+notebooks/*
+
+#====================================================
+# PYTHON PACKAGES / Byte-compiled / optimized / DLL files
+#====================================================
+__pycache__/
+*.egg
+*.egg-info/
 *.pyc
 *.pyo
 *.swp
-*.egg
-*.egg-info
-*.py[co]
+*.py[cod]
+*~
 .installed.cfg
-bin
-build
-develop-eggs
-dist
-eggs
 include
-lib
-lib64
-parts
-sdist
-var
+env/
+bin/
+build/
+develop-eggs/
+dist/
+eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
 
-# Installer logs
-pip-log.txt
+#====================================================
+# DVCS
+#====================================================
+*.git
+*.hg
+.hgignore
 
-# Unit test / coverage reports
-.coverage
-.tox
-nosetests.xml
 
-# Translations
-*.mo
-
-# Logs and databases
-*.log
+#====================================================
+# DATABASE
+#====================================================
 *.sql
 *.sqlite
+ehthumbs.db
+Thumbs.db
+config/databases.yml
+cache
 
+# DATA folders
+#----------------------------------------------------
+**/datum
+datum/
+datum/**
+
+
+#====================================================
+# C extensions
+#====================================================
+*.so
+
+#====================================================
+# INSTALLER ERROR LOGS
+#====================================================
+pip-log.txt
+*error_log.txt
+*.log
+log/
+pip-delete-this-directory.txt
+
+#====================================================
+# QA/ UNIT TEST / COVERAGE REPORTS
+#====================================================
+.coverage
+.tox
+.cache
+coverage.xml
+nosetests.xml
+htmlcov/
+
+
+#====================================================
+# i18 / i10 TRANSLATIONS
+#====================================================
+*.mo
+
+#====================================================
+# DOCS : SPHINX
+#====================================================
+docs/_build/
+
+
+#====================================================
 # Mr Developer
+#====================================================
 .mr.developer.cfg
+.project
+.pydevproject
 
-
-# OS generated files
+#====================================================
+# OS JUNK FILES
+#====================================================
 .DS_Store
 .DS_Store?
 ._*
@@ -56,3 +127,10 @@ nosetests.xml
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+#====================================================
+# EDITOR: Vi
+#====================================================
+*.swp
+
+

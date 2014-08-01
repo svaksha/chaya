@@ -9,7 +9,7 @@ All copies must retain this permission notice with the copyright notice.
 __author__ = 'SVAKSHA'
 __copyright__ = 'Copyright (c) 2012-Now, SVAKSHA'
 __license__ = 'AGPLv3'
-__version__ = "14.03.dev"
+__version__ = "14.08.dev"
 
 from setuptools import setup, find_packages
 import os, sys
@@ -67,7 +67,7 @@ setup(name=PKGNAME,
                      'Topic :: Graphics :: Computer Vision',
                      ],
       packages = ['chaya',
-                  'chaya.chAya',
+                  'chaya.core',
                   'chaya.datum',
                   'chaya.tests', #TODO
                   ],

@@ -11,7 +11,7 @@ All software copies must retain the Copyright, Licence and permission notice.
 __author__ = 'SVAKSHA'
 __copyright__ = 'Copyright (c) 2012-Now, SVAKSHA'
 __license__ = 'AGPLv3'
-__version__ = "14.04.dev"
+__version__ = "14.08.dev"
 
 import glob, sys
 import os, os.path
@@ -93,17 +93,17 @@ if __name__ == '__main__':
         
         
         image_list = ['Amitabha.png',
-              'NamdrolingMonastry.png',
-              'Buddha.png',              
-              'brown_bluff_antarctic_peninsula_antarctica.jpg',
-              'carnivore_preservation_trust_north_carolina.jpg',
-              'chinstrap_penguins_antarctica.jpg',
-              'churchill_manitoba_canada.jpg',
-              'lakeside-reflection-gehman_1438_600x450.jpg',
-              'mombo_okavango_delta_botswana.jpg',
-              'northern_spotted_owl_california.jpg',
-              'wise_owl.jpeg',
-              ];
+        'NamdrolingMonastry.png',
+        'Buddha.png',              
+        'brown_bluff_antarctic_peninsula_antarctica.jpg',
+        'carnivore_preservation_trust_north_carolina.jpg',
+        'chinstrap_penguins_antarctica.jpg',
+        'churchill_manitoba_canada.jpg',
+        'lakeside-reflection-gehman_1438_600x450.jpg',
+        'mombo_okavango_delta_botswana.jpg',
+        'northern_spotted_owl_california.jpg',
+        'wise_owl.jpeg',
+        ];
 
     counter = 1
     def count_processedImages(counter):

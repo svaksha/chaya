@@ -23,6 +23,7 @@ syntax: glob
 #====================================================
 .ipynb_checkpoints/*
 notebooks/*
+*.ipynb
 
 #====================================================
 # PYTHON PACKAGES / Byte-compiled / optimized / DLL files
